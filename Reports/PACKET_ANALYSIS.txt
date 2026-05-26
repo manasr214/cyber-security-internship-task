@@ -1,0 +1,17 @@
+Wireshark Packet Analysis
+
+Protocol: HTTP
+Source IP: 127.0.0.1
+Destination IP: 127.0.0.1
+Observation: HTTP GET requests captured.
+
+Protocol: DNS
+Source IP: 192.168.1.5
+Destination IP: 8.8.8.8
+Observation: DNS queries observed.
+
+Protocol: TCP
+Observation: TCP three-way handshake identified.
+
+Protocol: HTTPS
+Observation: Encrypted TLS traffic captured.

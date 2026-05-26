@@ -1,0 +1,123 @@
+ ## Objective
+To identify vulnerabilities, insecure configurations, and information disclosure issues using Nikto.
+
+ 
+
+## Tool Used
+- Nikto v2.5.0
+
+ 
+
+## Target Information
+- Target URL: http://localhost:3000
+- Target IP: 127.0.0.1
+- Target Port: 3000
+- Scan Duration: 13 seconds
+
+ 
+
+## Scan Summary
+Nikto scanned the local Express web server and identified multiple security weaknesses and configuration issues.
+
+ 
+
+## Findings
+
+### 1. Information Disclosure
+
+#### Detected Headers
+- Server: Express
+- X-Powered-By: Express
+
+#### Risk
+Attackers can identify server technology and exploit known vulnerabilities.
+
+#### Recommendation
+Disable the X-Powered-By header.
+
+Example:
+app.disable('x-powered-by');
+
+ 
+
+### 2. Sensitive Files and Directories Found
+
+#### Detected Resources
+- /robots.txt
+- /admin
+- /private
+- /backup.zip
+- /config.js
+- /package.json
+- /server-status
+
+#### Risk
+Sensitive files may expose confidential information.
+
+#### Recommendation
+- Restrict access to sensitive resources.
+- Remove backup/configuration files.
+- Protect admin panels with authentication.
+
+ 
+
+### 3. Dangerous HTTP Methods Enabled
+
+#### Enabled Methods
+- GET
+- HEAD
+- POST
+- PUT
+- DELETE
+- OPTIONS
+
+#### Risk
+PUT and DELETE methods may allow unauthorized modification of server resources.
+
+#### Recommendation
+Disable unnecessary HTTP methods.
+
+ 
+
+### 4. Cookie Security Weakness
+
+#### Observation
+- connect.sid cookie missing HttpOnly flag
+
+#### Risk
+Cookies can be accessed through client-side scripts.
+
+#### Recommendation
+Enable secure cookie settings.
+
+Example:
+cookie: {
+  httpOnly: true,
+  secure: true
+}
+
+ 
+
+### 5. Directory Indexing Enabled
+
+#### Detected Paths
+- /
+- /public/
+
+#### Risk
+Attackers can browse server directories and discover sensitive files.
+
+#### Recommendation
+Disable directory listing on the server.
+
+ 
+
+## Scan Statistics
+- Total Requests: 7897
+- Errors: 0
+- Issues Reported: 14
+
+ 
+
+## Conclusion
+The Nikto scan identified several vulnerabilities including information disclosure, exposed files, weak cookie settings, dangerous HTTP methods, and directory indexing. Proper server hardening is recommended.

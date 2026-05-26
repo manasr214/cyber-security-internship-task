@@ -1,0 +1,70 @@
+## Objective
+To intercept and analyze HTTP requests between the browser and the local web application using Burp Suite.
+
+ 
+
+## Tool Used
+- Burp Suite Community Edition v2024.2.2
+
+ 
+
+## Target Information
+- Target URL: http://localhost:3000
+- Protocol: HTTP
+- Browser Traffic Intercepted Through Burp Proxy
+
+ 
+
+## Procedure
+1. Open Burp Suite.
+2. Enable "Intercept ON" under the Proxy tab.
+3. Configure browser proxy settings.
+4. Access the local web application.
+5. Capture and inspect HTTP requests.
+
+ 
+
+## Captured Request Details
+
+### Request Method
+GET
+
+### Request URL
+http://localhost:3000/
+
+### Important Headers Observed
+- Host: localhost:3000
+- User-Agent: Mozilla/5.0
+- Accept-Encoding: gzip, deflate, br
+- Connection: keep-alive
+- Cookies present
+- Upgrade-Insecure-Requests: 1
+
+ 
+
+## Observations
+- HTTP requests were successfully intercepted.
+- Browser cookies were visible in the request.
+- Request headers exposed browser information.
+- Communication used HTTP instead of HTTPS.
+
+ 
+
+## Security Concerns
+- Traffic can be intercepted over unsecured HTTP.
+- Cookies without proper security flags are vulnerable.
+- Lack of HTTPS may lead to man-in-the-middle attacks.
+
+ 
+
+## Recommendations
+- Use HTTPS instead of HTTP.
+- Enable HttpOnly and Secure cookie flags.
+- Remove unnecessary headers.
+- Implement proper session security.
+
+ 
+
+## Conclusion
+Burp Suite successfully intercepted HTTP traffic between the browser and the local server. The captured requests revealed exposed headers and cookies, showing the need for secure communication and proper session management.
+

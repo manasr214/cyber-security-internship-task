@@ -1,6 +1,6 @@
-# OWASP ZAP Vulnerability Report
+# ZAP REPORT
 
-## Target Information
+## TARGET INFO
 
 | Item | Details |
 |---|---|
@@ -24,11 +24,13 @@
 
 ## 1. CSP: Failure to Define Directive with No Fallback
 
-- Risk Level: Medium
-- URL: http://localhost:3000/assets
-- Alert Reference: 10055-1
-- Description:
-  The Content Security Policy failed to define one or more directives that do not have fallback protections. This may allow unrestricted content execution or loading.
+- Risk Level: Medium  
+- URL: http://localhost:3000/assets  
+- Alert Reference: 10055-1  
+
+### Description
+
+The Content Security Policy failed to define one or more directives that do not have fallback protections. This may allow unrestricted content execution or loading.
 
 ### Recommendation
 
@@ -40,45 +42,9 @@
 
 ## 2. Cross-Domain Misconfiguration
 
-- Risk Level: Medium
-- Evidence:
-  Access-Control-Allow-Origin: *
+- Risk Level: Medium  
 
-- Description:
-  The application allows unrestricted cross-origin access through permissive CORS configuration, which may expose sensitive resources to external domains.
+### Evidence
 
-### Recommendation
-
-- Restrict CORS policy to trusted domains only.
-- Avoid using wildcard (*) origin settings.
-
----
-
-## 3. Timestamp Disclosure - Unix
-
-- Risk Level: Low
-- URL: http://localhost:3000
-- Evidence:
-  1666666667
-
-- Description:
-  The application disclosed Unix timestamp information which may help attackers gather system-related information.
-
-### Recommendation
-
-- Avoid exposing internal timestamps unnecessarily.
-- Minimize information leakage in server responses.
-
----
-
-# Overall Observations
-
-- Multiple medium and low severity vulnerabilities were identified.
-- Security headers and CORS configurations require improvement.
-- Information disclosure issues were detected during passive scanning.
-
----
-
-# Conclusion
-
-OWASP ZAP successfully identified several security misconfigurations and information disclosure issues in the OWASP Juice Shop application hosted on localhost.
+```txt
+Access-Control-Allow-Origin: *

@@ -1,6 +1,6 @@
-# Burp Suite Request Interception Report
+Burp Suite Request Interception Report
 
-## Target Information
+Target Information
 
 | Item | Details |
 |---|---|
@@ -8,9 +8,8 @@
 | Tool Used | Burp Suite Community Edition |
 | Testing Type | HTTP Request Interception |
 
----
 
-# Captured Requests
+Captured Requests
 
 | Request Type | Endpoint | Observation |
 |---|---|---|
@@ -19,9 +18,8 @@
 | GET | /rest/products/search | Product search API request observed |
 | POST | /rest/user/login | Login API request captured successfully |
 
----
 
-# Headers Observed
+Headers Observed
 
 - Host Header
 - User-Agent Header
@@ -29,26 +27,24 @@
 - Accept Header
 - Connection Header
 
----
 
-# Cookies Observed
+
+Cookies Observed
 
 - Session cookies were visible during request interception.
 - Browser request information was observable.
 - HTTP request headers were captured successfully.
 
----
 
-# Security Observations
+Security Observations
 
 - Burp Suite successfully captured HTTP traffic between browser and Juice Shop.
 - API endpoints were visible through request interception.
 - Request headers and cookies were observable.
 - Login requests and API communication were analyzed successfully.
 
----
 
-# Findings
+Findings
 
 | Finding | Description |
 |---|---|
@@ -57,8 +53,8 @@
 | Session Cookie Exposure | Session cookies could be viewed during interception |
 | Traffic Monitoring | HTTP requests were successfully monitored |
 
----
 
-# Conclusion
+
+Conclusion
 
 Burp Suite Community Edition successfully intercepted and analyzed HTTP requests from the OWASP Juice Shop application running on localhost. The testing demonstrated how web traffic, API requests, headers, and cookies can be inspected during security assessments.
