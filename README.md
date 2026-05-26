@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 **Cyber Security Internship Task**
 
 
